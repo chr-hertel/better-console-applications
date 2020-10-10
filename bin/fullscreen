@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Using Custom Profile "PresentationMode"
+gnome-terminal --window-with-profile=PresentationMode --full-screen

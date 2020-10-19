@@ -4,21 +4,21 @@
     "license": "MIT",
     "require": {
         "php": "^7.4",
-        "stoffel/console-canvas": "@dev",
-        "stoffel/console-gradient": "@dev",
-        "stoffel/console-headline": "@dev",
-        "stoffel/console-image": "@dev",
-        "symfony/console": "^5.2@dev"
+        "jaem3l/cli-note": "@dev"
     },
     "autoload": {
 	    "psr-4": {
             "App\\": "src/"
 	    }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": [
+        {"type": "path", "url": "~/Playground/Console/cli-note"},
         {"type": "path", "url": "~/Playground/Console/console-canvas"},
         {"type": "path", "url": "~/Playground/Console/console-gradient"},
         {"type": "path", "url": "~/Playground/Console/console-headline"},
-        {"type": "path", "url": "~/Playground/Console/console-image"}
+        {"type": "path", "url": "~/Playground/Console/console-image"},
+        {"type": "path", "url": "~/Playground/Console/console-sourcecode"}
     ]
 }

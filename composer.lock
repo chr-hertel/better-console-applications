@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b28c66d5041a80c9a5823f271e5c6cde",
+    "content-hash": "0c4d07f6638a1f8feb4cd5188079cb48",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -37,6 +37,48 @@
             "homepage": "https://github.com/container-interop/container-interop",
             "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
+        },
+        {
+            "name": "jaem3l/cli-note",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "/home/christopher/Playground/Console/cli-note",
+                "reference": "75c5d17517cb04d29714e94c32ebb79c01748dcb"
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "^7.4",
+                "stoffel/console-canvas": "@dev",
+                "stoffel/console-gradient": "@dev",
+                "stoffel/console-headline": "@dev",
+                "stoffel/console-image": "@dev",
+                "stoffel/console-sourcecode": "@dev",
+                "symfony/console": "^5.2@beta"
+            },
+            "replace": {
+                "symfony/polyfill-mbstring": "*",
+                "symfony/polyfill-php73": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "jæm3l\\CliNote\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christopher Hertel",
+                    "email": "mail@christopher-hertel.de"
+                }
+            ],
+            "description": "Tool to build CLI based presentation slide decks",
+            "transport-options": {
+                "relative": false
+            }
         },
         {
             "name": "laminas/laminas-servicemanager",
@@ -280,20 +322,20 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v9.99.99",
+            "version": "v9.99.100",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95"
+                "reference": "996434e5492cb4c3edcb9168db6fbb1359ef965a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
-                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/996434e5492cb4c3edcb9168db6fbb1359ef965a",
+                "reference": "996434e5492cb4c3edcb9168db6fbb1359ef965a",
                 "shasum": ""
             },
             "require": {
-                "php": "^7"
+                "php": ">= 7"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.*|5.*",
@@ -321,7 +363,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-07-02T15:55:56+00:00"
+            "time": "2020-10-15T08:29:30+00:00"
         },
         {
             "name": "psr/container",
@@ -374,18 +416,19 @@
         },
         {
             "name": "stoffel/console-canvas",
-            "version": "dev-master",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "/home/christopher/Playground/Console/console-canvas",
-                "reference": "a9ba4315d0e8cca44853f52fd262dc38137f9f7e"
+                "reference": "0550abb88fbc9a058e76ef8ae60bd8ca3692aab9"
             },
             "require": {
                 "php": "^7.4",
                 "stoffel/console-gradient": "@dev",
                 "stoffel/console-headline": "@dev",
                 "stoffel/console-image": "@dev",
-                "symfony/console": "^5.2@dev"
+                "stoffel/console-sourcecode": "@dev",
+                "symfony/console": "^5.2@beta"
             },
             "type": "library",
             "autoload": {
@@ -413,7 +456,7 @@
             "dist": {
                 "type": "path",
                 "url": "/home/christopher/Playground/Console/console-gradient",
-                "reference": "27564da469fceb5a6f120558ac69aefde8d8b745"
+                "reference": "acaf78bf7fd8e385dee79c0c56d904de5beb8f57"
             },
             "require": {
                 "php": "^7.4",
@@ -434,6 +477,15 @@
                     "Stoffel\\Console\\Gradient\\Tests\\": "tests/"
                 }
             },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christopher Hertel",
+                    "email": "mail@christopher-hertel.de"
+                }
+            ],
             "description": "Gradient Helper for Symfony Console Component",
             "transport-options": {
                 "relative": false
@@ -445,7 +497,7 @@
             "dist": {
                 "type": "path",
                 "url": "/home/christopher/Playground/Console/console-headline",
-                "reference": "604915cac2c0060347b17ad5369c3445fd99a2d5"
+                "reference": "d2c7adfe9af60747e000b5504d048c99f9ec58de"
             },
             "require": {
                 "laminas/laminas-text": "^2.7",
@@ -458,6 +510,15 @@
                     "Stoffel\\Console\\Headline\\": "src/"
                 }
             },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christopher Hertel",
+                    "email": "mail@christopher-hertel.de"
+                }
+            ],
             "description": "Headline helper for Symfony Console using FIGlet Fonts",
             "transport-options": {
                 "relative": false
@@ -469,7 +530,7 @@
             "dist": {
                 "type": "path",
                 "url": "/home/christopher/Playground/Console/console-image",
-                "reference": "58bdbf439739c81969570d705c9da2f4bcca5950"
+                "reference": "e8c8bbe654f93b487f41bec2213d0804206d13f2"
             },
             "require": {
                 "ext-gd": "*",
@@ -494,14 +555,52 @@
             "license": [
                 "MIT"
             ],
+            "authors": [
+                {
+                    "name": "Christopher Hertel",
+                    "email": "mail@christopher-hertel.de"
+                }
+            ],
             "description": "Helper to print images using Symfony Console",
             "transport-options": {
                 "relative": false
             }
         },
         {
+            "name": "stoffel/console-sourcecode",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "/home/christopher/Playground/Console/console-sourcecode",
+                "reference": "c87c97a70e41351366476cc34e32558fc4f9b8f8"
+            },
+            "require": {
+                "php": "^7.4",
+                "symfony/console": "^5.2@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stoffel\\Console\\SourceCode\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christopher Hertel",
+                    "email": "mail@christopher-hertel.de"
+                }
+            ],
+            "description": "Helper to render source code using Symfony Console Component",
+            "transport-options": {
+                "relative": false
+            }
+        },
+        {
             "name": "symfony/console",
-            "version": "5.x-dev",
+            "version": "v5.2.0-BETA2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -994,83 +1093,6 @@
             "time": "2020-07-14T12:35:20+00:00"
         },
         {
-            "name": "symfony/polyfill-mbstring",
-            "version": "v1.18.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "a6977d63bf9a0ad4c65cd352709e230876f9904a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/a6977d63bf9a0ad4c65cd352709e230876f9904a",
-                "reference": "a6977d63bf9a0ad4c65cd352709e230876f9904a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "suggest": {
-                "ext-mbstring": "For best performance"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.18-dev"
-                },
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill for the Mbstring extension",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "mbstring",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-07-14T12:35:20+00:00"
-        },
-        {
             "name": "symfony/polyfill-php70",
             "version": "v1.18.1",
             "source": {
@@ -1197,82 +1219,6 @@
                 }
             ],
             "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-07-14T12:35:20+00:00"
-        },
-        {
-            "name": "symfony/polyfill-php73",
-            "version": "v1.18.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "fffa1a52a023e782cdcc221d781fe1ec8f87fcca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/fffa1a52a023e782cdcc221d781fe1ec8f87fcca",
-                "reference": "fffa1a52a023e782cdcc221d781fe1ec8f87fcca",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.18-dev"
-                },
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php73\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ],
-                "classmap": [
-                    "Resources/stubs"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
             "homepage": "https://symfony.com",
             "keywords": [
                 "compatibility",
@@ -1540,15 +1486,11 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
-        "stoffel/console-canvas": 20,
-        "stoffel/console-gradient": 20,
-        "stoffel/console-headline": 20,
-        "stoffel/console-image": 20,
-        "symfony/console": 20
+        "jaem3l/cli-note": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.4"

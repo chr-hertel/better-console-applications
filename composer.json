@@ -8,8 +8,11 @@
     },
     "autoload": {
 	    "psr-4": {
-            "App\\": "src/"
-	    }
+            "Slides\\": "slides/"
+	    },
+        "classmap": [
+            "code/ExampleCommand.php"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

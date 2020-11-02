@@ -2,27 +2,347 @@
 <?php
 
 use jæm3l\CliNote\CliNote;
-use jæm3l\CliNote\Slide\CanvasSlide;
 use jæm3l\CliNote\Slide\CodeSlide;
 use jæm3l\CliNote\Slide\ImageSlide;
+use jæm3l\CliNote\Slide\ListSlide;
+use jæm3l\CliNote\Slide\ProcessSlide;
+use jæm3l\CliNote\Slide\TextSlide;
 use jæm3l\CliNote\Slide\TitleSlide;
 
 require dirname(__DIR__).'/vendor/autoload.php';
 
+const CONSOLE_APPS = '/home/christopher/Talks/Better\\ Console\\ Applications/SymfonyWorld2020/slidedeck';
+const CONSOLE_EXAMPLE = '/home/christopher/Talks/Better\\ Console\\ Applications/console-example';
+const CONSOLE_EXAMPLE_2 = '/home/christopher/Talks/Better\\ Console\\ Applications/console-example-2';
+const CONSOLE_EXAMPLE_3 = '/home/christopher/Talks/Better\\ Console\\ Applications/console-example-3';
+const CONSOLE_EXAMPLE_4 = '/home/christopher/Talks/Better\\ Console\\ Applications/console-example-4';
+const CONSOLE_FLEX = '/home/christopher/Talks/Better\\ Console\\ Applications/flex';
+
+ListSlide::setHeadlineFont(dirname(__DIR__).'/fonts/doom.flf');
+ListSlide::setBulletPointFont(dirname(__DIR__).'/fonts/small.flf');
 TitleSlide::setTitleFont(dirname(__DIR__).'/fonts/doom.flf');
 TitleSlide::setSubtitleFont(dirname(__DIR__).'/fonts/small.flf');
 
 $cliNote = new CliNote(
-    // Intro
+    // Title
     new TitleSlide('Better  Console'.PHP_EOL.'Applications', 'Christopher  Hertel'.PHP_EOL.'SymfonyWorld  2020'),
-    // Content
-    new TitleSlide('Image  Example'),
-    new ImageSlide('/home/christopher/Bilder/küste.jpg'),
-    new TitleSlide('Canvas  Example'),
-    new CanvasSlide(),
-    new TitleSlide('Code  Example'),
-    new CodeSlide(dirname(__DIR__).'/code/TestClass.php'),
+    new Slides\PersonaSlide(),
+
+    // Intro
+    new TitleSlide('Console'.PHP_EOL.'Applications'),
+    new TitleSlide('Console'.PHP_EOL.'Commands'),
+    new Slides\SymfonySlide(),
+    new TitleSlide('CLI    SAPI'),
+    new CodeSlide(dirname(__DIR__).'/code/cli-sapi-examples/cli-1.php'),
+    new CodeSlide(dirname(__DIR__).'/code/cli-sapi-examples/cli-2.php'),
+    new CodeSlide(dirname(__DIR__).'/code/cli-sapi-examples/cli-3.php'),
+    new CodeSlide(dirname(__DIR__).'/code/cli-sapi-examples/cli-4.php'),
+    new CodeSlide(dirname(__DIR__).'/code/cli-sapi-examples/cli-5.php'),
+    new CodeSlide(dirname(__DIR__).'/code/cli-sapi-examples/cli-6.php'),
+    new CodeSlide(dirname(__DIR__).'/code/cli-sapi-examples/cli-7.php'),
+    new CodeSlide(dirname(__DIR__).'/code/cli-sapi-examples/cli-8.php'),
+    new ImageSlide(dirname(__DIR__).'/images/hacking.gif'),
+
+    // Console Component
+    new TitleSlide('Console'.PHP_EOL.'Component'),
+    new TitleSlide('symfony /console', 'ca. 250 . 000 . 000 Downloads'),
+    new TitleSlide('CLI  Application'.PHP_EOL.'Framework'),
+    new TitleSlide('Installation', '$ composer  require  symfony / console'),
+    new TitleSlide('Application'),
+    new CodeSlide(dirname(__DIR__).'/code/app'),
+    new TitleSlide('chmod  + x'),
+    //new TextSlide(dirname(__DIR__).'/text/app-output'),
+    new ProcessSlide(CONSOLE_APPS.'/code/app --ansi'),
+    new TitleSlide('Command'),
+    new CodeSlide(dirname(__DIR__).'/code/ExampleCommand.php'),
+    new CodeSlide(dirname(__DIR__).'/code/app-command'),
+    new ProcessSlide(escapeshellarg(dirname(__DIR__)).'/code/app-command --ansi'),
+    new ProcessSlide(escapeshellarg(dirname(__DIR__)).'/code/app-command hello --ansi'),
+    new TitleSlide('Use Symfony Flex', 'With  More  Dependecies'),
+    new TitleSlide('Installation', '$ symfony  new  console-app'),
+    new CodeSlide(dirname(__DIR__).'/code/console'),
+    new ProcessSlide(CONSOLE_FLEX.'/bin/console --ansi'),
+    new ProcessSlide(CONSOLE_FLEX.'/bin/console hello --ansi'),
+
+    // Tool-Tip Collision
+    //new Slides\TodoSlide('Tool-Tip  Collision'),                                   // @TODO FIXME
+
+    // Application Types
+    new TitleSlide('Application'.PHP_EOL.'Types'),
+    new TitleSlide('Background   Jobs'),
+    new ListSlide([
+        'Running  In  Background',
+    ]),
+    new ListSlide([
+        'Running  In  Background',
+        'No  Interaction',
+    ]),
+    new ListSlide([
+        'Running  In  Background',
+        'No  Interaction',
+        'Controlled  By  Server',
+    ]),
+    new ListSlide([
+        'Running  In  Background',
+        'No  Interaction',
+        'Controlled  By  Server',
+        'e.g.  Queue  Workers',
+    ]),
+    new TitleSlide('Development   Helper'),
+    new ListSlide([
+        'Running  In  Foreground',
+    ]),
+    new ListSlide([
+        'Running  In  Foreground',
+        'Interaction  Possible',
+    ]),
+    new ListSlide([
+        'Running  In  Foreground',
+        'Interaction  Possible',
+        'Controller  By  User',
+    ]),
+    new ListSlide([
+        'Running  In  Foreground',
+        'Interaction  Possible',
+        'Controller  By  User',
+        'e.g. Code  Generator  Or  Debugging  Commands',
+    ]),
+    new TitleSlide('Hybrid   Tools'),
+    new ListSlide([
+        'Combining  Both',
+    ]),
+    new ListSlide([
+        'Combining  Both',
+        'w/  Or  w/o  Interaction',
+    ]),
+    new ListSlide([
+        'Combining  Both',
+        'w/  Or  w/o  Interaction',
+        'Used  While  Development / Pipeline',
+    ]),
+    new ListSlide([
+        'Combining  Both',
+        'w/  Or  w/o  Interaction',
+        'Used  While  Development / Pipeline',
+        'e.g.  Composer,  PHPUnit',
+    ]),
+    new TitleSlide('We   rarely   build   tools'),
+    new TitleSlide('Who   executes   this   command?', 'First   Question   Before   Development'),
+
+    // Example Application
+    new TitleSlide('Example'.PHP_EOL.'Application'),
+    new TitleSlide('Billing   Run'),
+    new ListSlide([
+        'Generate  Invoices',
+    ]),
+    new ListSlide([
+        'Generate  Invoices',
+        'Charge  payment',
+    ]),
+    new ListSlide([
+        'Generate  Invoices',
+        'Charge  payment',
+        'Generate  PDF',
+    ]),
+    new ListSlide([
+        'Generate  Invoices',
+        'Charge  payment',
+        'Generate  PDF',
+        'Mail  To  Customer',
+    ]),
+    new ListSlide([
+        'Generate  Invoices',
+        'Charge  payment',
+        'Generate  PDF',
+        'Mail  To  Customer',
+        'Export  Postal  Data',
+    ]),
+    new ListSlide([
+        'Console Command',
+    ]),
+    new ListSlide([
+        'Console Command',
+        'Executed monthly',
+    ]),
+    new ListSlide([
+        'Console Command',
+        'Executed monthly',
+        'Executed manually',
+    ]),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-kickoff.php'),
+    new ProcessSlide(CONSOLE_EXAMPLE.'/bin/console app:billing:run 11-2020 --ansi'),
+    new TitleSlide('It\'s  working'),
+    new TitleSlide('But  ...  umm'),
+    new TitleSlide('Let\'s  refactor'),
+    new TitleSlide('Testing!'),
+    new TitleSlide('ApplicationTest'.PHP_EOL.'CommandTester'),
+    new TitleSlide('Helper  to  execute  an'.PHP_EOL.'Application  or  Command'),
+    new TitleSlide('Easily  combined  with'.PHP_EOL.'KernelTestCase'),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-test.php', 20, 30, 100),
+    new ProcessSlide(CONSOLE_EXAMPLE.'/bin/phpunit -c '.CONSOLE_EXAMPLE.'/phpunit.xml.dist'),
+
+    // Input Interaction
+    new TitleSlide('Input'.PHP_EOL.'Interaction'),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-kickoff.php', 60, 51),
+    new CodeSlide(dirname(__DIR__).'/code/CommandInterface-small.php', 0, null, 100),
+    new CodeSlide(dirname(__DIR__).'/code/CommandInterface-large.php', 0, null, 100),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-kickoff.php', 60, 51),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-input.php', 65, 53),
+
+    // Console Events
+    new TitleSlide('Console'.PHP_EOL.'Events'),
+    new ListSlide([
+        'console . command  (ConsoleCommandEvent)',
+    ]),
+    new ListSlide([
+        'console . command  (ConsoleCommandEvent)',
+        'console . error  (ConsoleErrorEvent)',
+    ]),
+    new ListSlide([
+        'console . command  (ConsoleCommandEvent)',
+        'console . error  (ConsoleErrorEvent)',
+        'console . terminate  (ConsoleTerminateEvent)',
+    ]),
+    new ImageSlide(dirname(__DIR__).'/images/events.png'),
+    new ProcessSlide('eog --fullscreen '.CONSOLE_APPS.'/images/events.png'),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-input.php', 65, 30),
+    new CodeSlide(dirname(__DIR__).'/code/StopwatchListener.php', 10),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-listener.php', 65, 21),
+    new ProcessSlide(CONSOLE_EXAMPLE.'/bin/console app:billing:run 11-2020 --ansi'),
+
+    // Command == Glue Code
+    new TitleSlide('Command'.PHP_EOL.'=='.PHP_EOL.'Glue  Code'),
+    new TitleSlide('No  Business  Logic'.PHP_EOL.'In  A  Command'),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-listener.php', 65, 21),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-listener.php', 120, 22),
+    new TitleSlide('Move  Business  Logic'.PHP_EOL.'To  Service  Layer'),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-logic.php', 12, 41),
+    new CodeSlide(dirname(__DIR__).'/code/BillingRun.php', 15, 31),
+    new TitleSlide('Cleaner'.PHP_EOL.'Dependencies'),
+    new TitleSlide('Easier  Testing'),
+
+    // Tool-Tip PHPBench
+    //new Slides\TodoSlide('Tool-Tip  PHPBench'),                                 // @TODO FIXME
+
+    // Output
+    new TitleSlide('Output'),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-logic.php', 12, 41),
+    new CodeSlide(dirname(__DIR__).'/code/BillingRun.php', 3, 43),
+    new TitleSlide('BillingRun   Depends   On'.PHP_EOL.'Symfony\\Component\\Console'),
+    new TitleSlide('Really?'),
+    new TitleSlide('NOPE'),
+    new TitleSlide('Decouple   Business   Logic'.PHP_EOL.'From   Framework'),
+
+    // Tool-Tip deptrac
+    //new Slides\TodoSlide('Tool-Tip  deptrac'),                                  // @TODO FIXME
+
+    // Logging
+    new TitleSlide('Logging'),
+    new TitleSlide('Perfect  for'.PHP_EOL.'Background  Jobs'),
+    new CodeSlide(dirname(__DIR__).'/code/BillingRunLogging.php', 15, 34),
+    new ProcessSlide(CONSOLE_EXAMPLE_2.'/bin/console app:billing:run 11-2020 --ansi'),
+    new TitleSlide('Verbosity  Level'),
+    ListSlide::withHeadline('Quite', [
+        '-q  Or  --quiet',
+    ]),
+    ListSlide::withHeadline('Quite', [
+        '-q  Or  --quiet',
+        'No  Output',
+    ]),
+    ListSlide::withHeadline('Quite', [
+        '-q  Or  --quiet',
+        'No  Output',
+        'Log  Level  >=  Error',
+    ]),
+    ListSlide::withHeadline('Normal', [
+        'All  Output',
+    ]),
+    ListSlide::withHeadline('Normal', [
+        'All  Output',
+        'Log  Level  >=  Warning',
+    ]),
+    ListSlide::withHeadline('Verbose', [
+        '-v',
+    ]),
+    ListSlide::withHeadline('Verbose', [
+        '-v',
+        'All  Output',
+    ]),
+    ListSlide::withHeadline('Verbose', [
+        '-v',
+        'All  Output',
+        'Log  Level  >=  Notice',
+    ]),
+    ListSlide::withHeadline('Very  Verbose', [
+        '-vv',
+    ]),
+    ListSlide::withHeadline('Very  Verbose', [
+        '-vv',
+        'All  Output',
+    ]),
+    ListSlide::withHeadline('Very  Verbose', [
+        '-vv',
+        'All  Output',
+        'Log  Level  >=  Info',
+    ]),
+    ListSlide::withHeadline('Debug', [
+        '-vvv',
+    ]),
+    ListSlide::withHeadline('Debug', [
+        '-vvv',
+        'All  Output',
+    ]),
+    ListSlide::withHeadline('Debug', [
+        '-vvv',
+        'All  Output',
+        'All  Log  Levels  +  Extended  Context',
+    ]),
+    new ProcessSlide(CONSOLE_EXAMPLE_2.'/bin/console app:billing:run 11-2020 -vv --ansi'),
+    new ProcessSlide(CONSOLE_EXAMPLE_2.'/bin/console app:billing:run 11-2020 -vvv --ansi'),
+
+    // Logging
+    new TitleSlide('Output'),
+    new TitleSlide('ProgressBar?'),
+    new TitleSlide('Callable', 'The  Easy  Way  Out'),
+    new CodeSlide(dirname(__DIR__).'/code/BillingRunCallable.php', 33, 25),
+    new CodeSlide(dirname(__DIR__).'/code/billing-run-callable.php', 40, 24),
+    new TitleSlide('Glue  Code', 'Like   Custom   Observer'),
+    new ProcessSlide(CONSOLE_EXAMPLE_3.'/bin/console app:billing:run 11-2020 --ansi'),
+
+    // Features
+    new TitleSlide('Features'),
+    new TitleSlide('SymfonyStyle'),
+    new TitleSlide('Helper  Class  On  Top'.PHP_EOL.'Of  Input  &  Output'),
+    new CodeSlide(dirname(__DIR__).'/code/symfony-style.php'),
+    new ProcessSlide('eog --fullscreen '.CONSOLE_APPS.'/images/style.png'),    // @TODO: use TextSlide
+    new TitleSlide('Sections'),
+    //new Slides\TodoSlide('Sections Schema'),                                 // @TODO FIXME
+    new CodeSlide(dirname(__DIR__).'/code/section.php'),
+    new ProcessSlide(CONSOLE_EXAMPLE_4.'/bin/console app:billing:run 11-2020 --ansi'),
+    new TitleSlide('Cursor', 'New  Since  Symfony  5 . 1'),
+    new CodeSlide(dirname(__DIR__).'/code/cursor.php'),
+    new Slides\SnakeSlide(),
+    new TitleSlide('Color', 'New  Since  Symfony  5 . 2'),
+    new CodeSlide(dirname(__DIR__).'/code/color.php'),
+    new ImageSlide(dirname(__DIR__).'/images/sympony.jpeg'),
+    new Slides\GradientSlide(),
+    new TitleSlide('Signals', 'New  Since  Symfony  5 . 2'),
+    new CodeSlide(dirname(__DIR__).'/code/signal-cmd.php'),
+    new ListSlide([
+        'console . command  (ConsoleCommandEvent)',
+        'console . error  (ConsoleErrorEvent)',
+        'console . terminate  (ConsoleTerminateEvent)',
+    ]),
+    new ListSlide([
+        'console . command  (ConsoleCommandEvent)',
+        'console . error  (ConsoleErrorEvent)',
+        'console . terminate  (ConsoleTerminateEvent)',
+        'console . signal  (ConsoleSignalEvent)',
+    ]),
+    new CodeSlide(dirname(__DIR__).'/code/signal-listener.php'),
+
     // Outro
+    new TitleSlide('The   End'),
     new TitleSlide('Thank  You'),
     new TitleSlide('Questions?'),
 );

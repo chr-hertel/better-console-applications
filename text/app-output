@@ -1,0 +1,17 @@
+Console Tool
+
+<fg=yellow>Usage:</>
+  command [options] [arguments]
+
+<fg=yellow>Options:</>
+  <fg=green>-h, --help</>            Display help for the given command. When no command is given display help for the list command
+  <fg=green>-q, --quiet</>           Do not output any message
+  <fg=green>-V, --version</>         Display this application version
+  <fg=green>    --ansi</>            Force ANSI output
+  <fg=green>    --no-ansi</>         Disable ANSI output
+  <fg=green>-n, --no-interaction</>  Do not ask any interactive question
+  <fg=green>-v|vv|vvv, --verbose</>  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+<fg=yellow>Available commands:</>
+  <fg=green>help</>  Displays help for a command
+  <fg=green>list</>  Lists commands

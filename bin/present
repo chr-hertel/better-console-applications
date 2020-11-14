@@ -18,10 +18,10 @@ const CONSOLE_EXAMPLE_3 = '/home/christopher/Talks/Better\\ Console\\ Applicatio
 const CONSOLE_EXAMPLE_4 = '/home/christopher/Talks/Better\\ Console\\ Applications/console-example-4';
 const CONSOLE_FLEX = '/home/christopher/Talks/Better\\ Console\\ Applications/flex';
 
-ListSlide::setHeadlineFont(dirname(__DIR__).'/fonts/doom.flf');
-ListSlide::setBulletPointFont(dirname(__DIR__).'/fonts/small.flf');
-TitleSlide::setTitleFont(dirname(__DIR__).'/fonts/doom.flf');
-TitleSlide::setSubtitleFont(dirname(__DIR__).'/fonts/small.flf');
+ListSlide::setHeadlineFont(dirname(__DIR__).'/fonts/Doom.flf');
+ListSlide::setBulletPointFont(dirname(__DIR__).'/fonts/Small.flf');
+TitleSlide::setTitleFont(dirname(__DIR__).'/fonts/Doom.flf');
+TitleSlide::setSubtitleFont(dirname(__DIR__).'/fonts/Small.flf');
 
 $cliNote = new CliNote(
     // Title

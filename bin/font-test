@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+
+use Laminas\Text\Figlet\Figlet;
+use Stoffel\Console\Headline\HeadlineHelper;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\SingleCommandApplication;
+use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Finder\Finder;
+
+require dirname(__DIR__).'/vendor/autoload.php';
+
+$cliNote = (new SingleCommandApplication())
+    ->addArgument('text', InputArgument::REQUIRED, 'Text used for the test rendering')
+    ->setCode(function (InputInterface $input, OutputInterface $output) {
+
+        $io = new SymfonyStyle($input, $output);
+        $text = $input->getArgument('text');
+        $fonts = (new Finder())
+            ->files()
+            ->name('*.flf')
+            ->in(__DIR__.'/../fonts')
+            ->sortByName();
+        $fonts = iterator_to_array($fonts);
+
+        do {
+            $font = current($fonts);
+            $io->title(rtrim($font->getFilename(),'.fl'));
+            HeadlineHelper::create($output)
+                ->setText($text)
+                ->setFigletOptions([
+                    'font' => $font->getRealPath(),
+                    'justification' => Figlet::JUSTIFICATION_LEFT,
+                ])
+                ->write();
+            $io->newLine(2);
+
+        } while (next($fonts) && $io->confirm('Next?'));
+
+    })->run();

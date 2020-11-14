@@ -4,12 +4,13 @@
     "license": "MIT",
     "require": {
         "php": "^7.4",
-        "jaem3l/cli-note": "@dev"
+        "jaem3l/cli-note": "@dev",
+        "symfony/finder": "^5.1"
     },
     "autoload": {
-	    "psr-4": {
+        "psr-4": {
             "Slides\\": "slides/"
-	    },
+        },
         "classmap": [
             "code/ExampleCommand.php"
         ]
@@ -17,11 +18,29 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
-        {"type": "path", "url": "~/Playground/Console/cli-note"},
-        {"type": "path", "url": "~/Playground/Console/console-canvas"},
-        {"type": "path", "url": "~/Playground/Console/console-gradient"},
-        {"type": "path", "url": "~/Playground/Console/console-headline"},
-        {"type": "path", "url": "~/Playground/Console/console-image"},
-        {"type": "path", "url": "~/Playground/Console/console-sourcecode"}
+        {
+            "type": "path",
+            "url": "~/Playground/Console/cli-note"
+        },
+        {
+            "type": "path",
+            "url": "~/Playground/Console/console-canvas"
+        },
+        {
+            "type": "path",
+            "url": "~/Playground/Console/console-gradient"
+        },
+        {
+            "type": "path",
+            "url": "~/Playground/Console/console-headline"
+        },
+        {
+            "type": "path",
+            "url": "~/Playground/Console/console-image"
+        },
+        {
+            "type": "path",
+            "url": "~/Playground/Console/console-sourcecode"
+        }
     ]
 }

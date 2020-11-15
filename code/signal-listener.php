@@ -9,14 +9,14 @@ class SignalSubscriber implements EventSubscriberInterface
 {
     // ...
 
-    public function handleSignal(ConsoleSignalEvent $event)
+    public function handleSignal(ConsoleSignalEvent $event): void
     {
         $signal = $event->getHandlingSignal();
 
         // ...
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             ConsoleEvents::SIGNAL => 'handleSignal',

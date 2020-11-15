@@ -1,0 +1,59 @@
+
+<fg=yellow>Lorem Ipsum Dolor Sit Amet
+==========================</>
+
+ // Duis aute irure dolor in reprehenderit in voluptate velit esse collum dolore eu fugiat nulla pariatur. Excepteur
+ // sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+
+ ------------------- -------- -------- ------ -----------------------
+  <fg=green>Name                Method   Scheme   Host   Path</>
+ ------------------- -------- -------- ------ -----------------------
+  admin_post_new      ANY      ANY      ANY    /admin/post/new
+  admin_post_show     GET      ANY      ANY    /admin/post/{id}
+  admin_post_edit     ANY      ANY      ANY    /admin/post/{id}/edit
+  admin_post_delete   DELETE   ANY      ANY    /admin/post/{id}
+ ------------------- -------- -------- ------ -----------------------
+
+<bg=red;fg=white> !                                                                                                                  </>
+<bg=red;fg=white> ! [CAUTION] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </>
+<bg=red;fg=white> !           dolore magna aliqua. Ut enim minim veniam, quis nostrud exercitation ullamco laboris.                  </>
+<bg=red;fg=white> !                                                                                                                  </>
+
+<fg=yellow>Consectetur Adispisicing Elit Sed Do Eiusmod
+--------------------------------------------</>
+
+ * Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+ * Ut enim minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+ * Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+ <fg=green>Bundle namespace:</>
+ > AppBundle <Enter>
+
+ <fg=green>Bundle name</> [<fg=yellow>AcmeAppBundle</>]:
+ > <Enter>
+
+ <fg=green>Do you want to enable the bundle? (yes/no)</> [<fg=yellow>yes</>]:
+ > <Enter>
+
+ <fg=green>Configuration format (select one)</> [<fg=yellow>annotation</>]:
+  [0] yaml
+  [1] yml
+  [2] php
+  [3] annotation
+ > annotation
+
+<fg=yellow> ! [NOTE] Duis aute irure dolor in reprehenderit in voluptate velit esse collum dolore eu fugiat nulla pariatur.
+ !        Excepteur sint occaecat cupidatat.</>
+
+<bg=green;fg=black>                                                                                                                    </>
+<bg=green;fg=black> [OK] Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elit                                                       </>
+<bg=green;fg=black>                                                                                                                    </>
+
+<bg=red;fg=white>                                                                                                                    </>
+<bg=red;fg=white> [ERROR] Duis aute irure dolor in reprehenderit in voluptate velit esse.                                            </>
+<bg=red;fg=white>                                                                                                                    </>
+
+<bg=yellow;fg=black>                                                                                                                    </>
+<bg=yellow;fg=black> [WARNING] Ut enim minim veniam, quis nostrud exercitation ullamco laboris nisi.                                    </>
+<bg=yellow;fg=black>                                                                                                                    </>
+

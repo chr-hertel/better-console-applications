@@ -12,7 +12,8 @@
             "Slides\\": "slides/"
         },
         "classmap": [
-            "code/ExampleCommand.php"
+            "code/ExampleCommand.php",
+            "code/SymfonyStyleDemoCommand.php"
         ]
     },
     "minimum-stability": "dev",

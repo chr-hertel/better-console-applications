@@ -11,26 +11,23 @@ use Stoffel\Console\Canvas\Element\Image;
 use Stoffel\Console\Canvas\Fill;
 use Stoffel\Console\Canvas\Position;
 
-class TodoSlide extends CanvasSlide
+class OutroSlide extends CanvasSlide
 {
     private string $text;
+    private string $gradient;
 
-    public function __construct(string $text)
+    public function __construct(string $text, string $gradient)
     {
         $this->text = $text;
+        $this->gradient = $gradient;
     }
 
     protected function getElements(): array
     {
         return [
-            [new Position(50, 25), new Headline(sprintf('ToDo:  %s', $this->text), Fill::withColor('white', '', ['bold']), [
-                'font' => dirname(__DIR__).'/fonts/doom.flf',
+            [new Position(35, 15), new Headline($this->text, Fill::withGradient($this->gradient), [
+                'font' => dirname(__DIR__).'/fonts/3d.flf',
             ])],
         ];
-    }
-
-    protected function getBackground(): ?Fill
-    {
-        return Fill::withColor('red');
     }
 }

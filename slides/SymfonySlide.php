@@ -13,10 +13,15 @@ use Stoffel\Console\Canvas\Position;
 
 class SymfonySlide extends CanvasSlide
 {
+    protected function getBackground(): ?Fill
+    {
+        return Fill::withColor('#FFFFFF');
+    }
+
     protected function getElements(): array
     {
         return [
-            [new Position(10, 15), new Image(dirname(__DIR__).'/images/symfony-logo.png', new Dimension(180, 60))],
+            [new Position(10, 12), new Image(dirname(__DIR__).'/images/symfony-logo.png', new Dimension(130, 50))],
         ];
     }
 }

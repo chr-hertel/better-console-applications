@@ -66,14 +66,31 @@ class BillingRunCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        // ...
+        if ('dev' === $this->environment) {
+            $stopwatch = new Stopwatch();
+            $stopwatch->start('billing-run');
+        }
 
         $period = $input->getArgument('period');
 
         $output->writeln(sprintf('<info>Start billing run for %s</info>', $period->format('m-Y')));
         $output->writeln('============================='.PHP_EOL);
 
-        // ...
+        $customers = $this->fetchActiveCustomer();
+        $output->writeln(sprintf('<info>Loaded %d customers to process</info>'.PHP_EOL, count($customers)));
+
+        $invoices = $this->generateInvoice($output, $customers, $period);
+        $this->payInvoices($output, $invoices);
+        $this->sendInvoices($output, $invoices);
+        $this->exportMagazines($output, $period, $invoices);
+
+        $output->writeln(['', '<info>Done.</info>', '']);
+
+        if ('dev' === $this->environment) {
+            $output->writeln((string) $stopwatch->stop('billing-run'));
+        }
+
+        return 0;
     }
 
     protected function interact(InputInterface $input, OutputInterface $output): void

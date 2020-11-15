@@ -60,10 +60,5 @@ class GradientSlide extends Slide
         $output->write(PHP_EOL);
         $output->write(PHP_EOL);
         $output->write(PHP_EOL);
-        $output->write(PHP_EOL);
-        $output->write(PHP_EOL);
-        $output->write(PHP_EOL);
-        $output->write(PHP_EOL);
-        $output->write(PHP_EOL);
     }
 }

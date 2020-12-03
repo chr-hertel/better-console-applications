@@ -9,7 +9,8 @@ Based on [jaem3l/cli-note](https://github.com/jaem3l/cli-note)
 ## Play this slide deck
 
 ```bash
-$ git clone git@github.com:chr-hertel/better-console-applications.git
+$ git clone --recursive git@github.com:chr-hertel/better-console-applications.git
+$ cd better-console-applications
 $ composer install
 $ vendor/bin/cli-note
 ```

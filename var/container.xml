@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+  <parameters>
+    <parameter key="event_dispatcher.event_aliases" type="collection">
+      <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
+      <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
+      <parameter key="Symfony\Component\Console\Event\ConsoleSignalEvent">console.signal</parameter>
+      <parameter key="Symfony\Component\Console\Event\ConsoleTerminateEvent">console.terminate</parameter>
+    </parameter>
+    <parameter key="console.command.ids" type="collection"/>
+  </parameters>
+  <services>
+    <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
+    <service id="CliNote" class="jæm3l\CliNote\CliNote" public="true">
+      <argument type="tagged_iterator" tag="cli_note.slide"/>
+    </service>
+    <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
+      <tag name="container.no_preload"/>
+      <tag name="container.no_preload"/>
+      <argument type="service">
+        <service class="Symfony\Component\DependencyInjection\ServiceLocator">
+          <tag name="container.service_locator"/>
+          <argument type="collection"/>
+        </service>
+      </argument>
+      <argument type="collection"/>
+    </service>
+  </services>
+</container>

@@ -1,0 +1,127 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    ExampleAppTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: 'Example  Application'
+    BillingRun:
+        parent: 'TitleSlide'
+        arguments:
+            $title: 'Billing   Run'
+    BillingRunList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Billing   Run'
+            $bulletPoints:
+                - 'Generate  Invoices'
+    BillingRunList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Billing   Run'
+            $bulletPoints:
+                - 'Generate  Invoices'
+                - 'Charge  payment'
+    BillingRunList3:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Billing   Run'
+            $bulletPoints:
+                - 'Generate  Invoices'
+                - 'Charge  payment'
+                - 'Generate  PDF'
+    BillingRunList4:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Billing   Run'
+            $bulletPoints:
+                - 'Generate  Invoices'
+                - 'Charge  payment'
+                - 'Generate  PDF'
+                - 'Mail  To  Customer'
+    BillingRunList5:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Billing   Run'
+            $bulletPoints:
+                - 'Generate  Invoices'
+                - 'Charge  payment'
+                - 'Generate  PDF'
+                - 'Mail  To  Customer'
+                - 'Export  Postal  Data'
+    BillingRunExecList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Execution   Details'
+            $bulletPoints:
+                - 'Console Command'
+    BillingRunExecList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Execution   Details'
+            $bulletPoints:
+                - 'Console Command'
+                - 'Executed monthly'
+    BillingRunExecList3:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Execution   Details'
+            $bulletPoints:
+                - 'Console Command'
+                - 'Executed monthly'
+                - 'Executed manually'
+    BillingRunCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/billing-run-kickoff.php'
+    BillingRunExec:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'bin/console app:billing:run 11-2020'
+            $workingDirectory: '%app.example%'
+            $command: 'bin/console app:billing:run 11-2020 --ansi'
+    WorkingTitle1:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "It's working!"
+    WorkingTitle2:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "It's working!"
+            $subtitle: "But  . . .  umm"
+    WorkingTitle3:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "It's working!"
+            $subtitle: "But  . . .  umm\nLet's  refactor"
+    TestingTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: 'Testing'
+    ApplicationCommandTester:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "ApplicationTester\nCommandTester"
+    HelperClasses1:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Helper Classes"
+            $subtitle: "Provided  by  Symfony\nto  execute  an\nApplication  or  Command"
+    HelperClasses2:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Helper Classes"
+            $subtitle: "Easily  combined  with\nKernel Test Case"
+    TestCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/billing-run-test.php'
+            $offset: 20
+            $lines: 30
+    BillingRunTest:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'bin/phpunit'
+            $workingDirectory: '%app.example%'
+            $command: 'bin/phpunit -c phpunit.xml.dist'

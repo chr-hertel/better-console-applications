@@ -1,0 +1,30 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    OutputTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Output"
+    OutputCodeExample1:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/billing-run-logic.php'
+            $offset: 22
+            $lines: 31
+    OutputCodeExample2:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/BillingRun.php'
+            $offset: 15
+            $lines: 31
+    OutputProblem:
+        parent: 'TitleSlide'
+        arguments:
+            $title: 'But, really?'
+            $subtitle: "BillingRun   Depends   On\nSymfony\\Component\\Console"
+    OutputDecouple:
+        parent: 'TitleSlide'
+        arguments:
+            $title: 'Next Step'
+            $subtitle: "Decouple   Business   Logic\nFrom   Framework"

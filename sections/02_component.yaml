@@ -1,0 +1,94 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    ComponentTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Console\nComponent"
+    ApplicationFramework:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "CLI  Application\nFramework"
+    Console:
+        parent: 'TitleSlide'
+        arguments:
+            $title: 'symfony/console'
+    ConsoleDownloads:
+        parent: 'TitleSlide'
+        arguments:
+            $title: 'symfony/console'
+            $subtitle: 'ca. 250.000.000  Downloads'
+            $subtitleFont: '%base_path%/fonts/Straight.flf'
+    ConsoleInstallation:
+        class: 'Slides\BashTitleSlide'
+        arguments:
+            $title: 'Installation'
+            $bash: '$ composer  require  symfony/console'
+
+    ApplicationTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: 'Application'
+    AppCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/app'
+    Chmod:
+        parent: 'TitleSlide'
+        arguments:
+            $title: 'chmod + x'
+    AppExecute:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'app'
+            $command: 'code/app --ansi'
+    CommandTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: 'Command'
+    CommandCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/ExampleCommand.php'
+            $minLineLength: 90
+    AppCommandCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/app-command'
+    AppCommandExecute:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'app'
+            $command: 'code/app-command --ansi'
+    AppCommandHelloExecute:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'app'
+            $command: 'code/app-command hello --ansi'
+    SymfonyFlex:
+        parent: 'TitleSlide'
+        arguments:
+            $title: 'Use Symfony Flex'
+            $subtitle: 'In case you have more dependencies'
+    FlexInstallation:
+        class: 'Slides\BashTitleSlide'
+        arguments:
+            $title: 'Installation'
+            $bash: '$ symfony  new  console-app'
+    ConsoleCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/console'
+    ConsoleExecute:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'bin/console'
+            $workingDirectory: '%app.flex%'
+            $command: 'bin/console --ansi'
+    ConsoleCommandExecute:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'bin/console hello'
+            $workingDirectory: '%app.flex%'
+            $command: 'bin/console hello --ansi'

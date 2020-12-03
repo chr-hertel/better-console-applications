@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    TheEnd:
+        class: 'Slides\OutroSlide'
+        arguments: ['   The  End', 'fruit']
+    ThankYou:
+        class: 'Slides\OutroSlide'
+        arguments: ['Thank  You', 'instagram']
+    Questions:
+        class: 'Slides\OutroSlide'
+        arguments: ['Questions?', 'teen']

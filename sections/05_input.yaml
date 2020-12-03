@@ -1,0 +1,30 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    InputTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Input\nInteraction"
+    BillingRunCode2:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/billing-run-kickoff.php'
+            $offset: 60
+            $lines: 34
+    CommandInterface1:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/CommandInterface-small.php'
+            $minLineLength: 100
+    CommandInterface2:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/CommandInterface-large.php'
+            $minLineLength: 100
+    BillingRunInputCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/billing-run-input.php'
+            $offset: 65
+            $lines: 35

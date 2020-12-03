@@ -1,0 +1,6 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    Slides\IntroSlide: ~
+    Slides\PersonaSlide: ~

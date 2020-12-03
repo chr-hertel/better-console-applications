@@ -1,0 +1,49 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    GlueCodeTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Command\n   ==  Glue  Code"
+    GlueCodeRule:
+        parent: 'TitleSlide'
+        arguments:
+            $title: 'Golden Rule'
+            $subtitle: "No  Business  Logic\nIn  A  Command"
+    BusinessCodeExample1:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/billing-run-listener.php'
+            $offset: 65
+            $lines: 21
+    BusinessCodeExample2:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/billing-run-listener.php'
+            $offset: 120
+            $lines: 22
+    MoveCodeTitle:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Move  Business\nLogic  To  Service"
+    BusinessCodeExample3:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/billing-run-logic.php'
+            $offset: 22
+            $lines: 31
+    BusinessCodeService:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/BillingRun.php'
+            $offset: 15
+            $lines: 31
+    CleanerDependencies:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Cleaner\nDependencies"
+    EasierTesting:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Easier Testing"

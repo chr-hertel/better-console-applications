@@ -1,0 +1,45 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    AgendaTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: 'Agenda'
+    ConsoleApplications:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Console\nApplications"
+    ConsoleCommands:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Console\nCommands"
+    ExampleApplication:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Example\nApplication"
+    Slides\SymfonySlide: ~
+    CliApi:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "CLI\nSAPI"
+    CliArgv:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/cli-sapi-examples/cli-3.php'
+    CliSapiCheck:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/cli-sapi-examples/cli-6.php'
+    CliStdin:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/cli-sapi-examples/cli-7.php'
+    CliEscape:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/cli-sapi-examples/cli-8.php'
+    ImageHacking:
+        parent: 'ImageSlide'
+        arguments:
+            $imagePath: '%base_path%/images/hacking.gif'

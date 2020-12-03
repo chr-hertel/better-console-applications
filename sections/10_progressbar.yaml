@@ -1,0 +1,40 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    OutputProgressTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Output"
+    ProgressBarTitle:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "ProgressBar?"
+    Callable:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Callable"
+            $subtitle: 'The  Easy  Way  Out'
+    CallableCode1:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/BillingRunCallable.php'
+            $offset: 33
+            $lines: 25
+    CallableCode2:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/billing-run-callable.php'
+            $offset: 40
+            $lines: 24
+    CustomGlueCode:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Glue  Code"
+            $subtitle: "Like   Custom   Observer"
+    CallableProcess:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'bin/console app:billing:run 11-2020'
+            $workingDirectory: '%app.example_3%'
+            $command: 'bin/console app:billing:run 11-2020 --ansi'

@@ -1,0 +1,137 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    LoggingTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Logging"
+    OutputProblem:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Perfect  for\nBackground  Jobs"
+    LoggingCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/BillingRunLogging.php'
+            $offset: 15
+            $lines: 34
+    LoggingProcessNormal:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'bin/console app:billing:run 11-2020'
+            $workingDirectory: '%app.example_2%'
+            $command: 'bin/console app:billing:run 11-2020 --ansi'
+    VerbosityLevel:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Verbosity  Level"
+    VerbosityQuietList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Quiet'
+            $bulletPoints:
+                - '-q  Or  --quiet'
+    VerbosityQuietList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Quiet'
+            $bulletPoints:
+                - '-q  Or  --quiet'
+                - 'No  Output'
+    VerbosityQuietList3:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Quiet'
+            $bulletPoints:
+                - '-q  Or  --quiet'
+                - 'No  Output'
+                - 'Log  Level:  From  Error'
+    VerbosityNormalList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Normal'
+            $bulletPoints:
+                - 'All  Output'
+    VerbosityNormalList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Normal'
+            $bulletPoints:
+                - 'All  Output'
+                - 'Log  Level:  From  Warning'
+    VerbosityVerboseList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Verbose'
+            $bulletPoints:
+                - '-v'
+    VerbosityVerboseList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Verbose'
+            $bulletPoints:
+                - '-v'
+                - 'All  Output'
+    VerbosityVerboseList3:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Verbose'
+            $bulletPoints:
+                - '-v'
+                - 'All  Output'
+                - 'Log  Level:  From  Notice'
+    VerbosityVeryVerboseList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Very  Verbose'
+            $bulletPoints:
+                - '-vv'
+    VerbosityVeryVerboseList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Very  Verbose'
+            $bulletPoints:
+                - '-vv'
+                - 'All  Output'
+    VerbosityVeryVerboseList3:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Very  Verbose'
+            $bulletPoints:
+                - '-vv'
+                - 'All  Output'
+                - 'Log  Level:  From  Info'
+    VerbosityDebugList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Very  Verbose'
+            $bulletPoints:
+                - '-vvv'
+    VerbosityDebugList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Very  Verbose'
+            $bulletPoints:
+                - '-vvv'
+                - 'All  Output'
+    VerbosityDebugList3:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Very  Verbose'
+            $bulletPoints:
+                - '-vvv'
+                - 'All  Output'
+                - "All  Log  Levels\n   And  Extended  Context"
+    LoggingProcessVeryVerbose:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'bin/console app:billing:run 11-2020 -vv'
+            $workingDirectory: '%app.example_2%'
+            $command: 'bin/console app:billing:run 11-2020 -vv --ansi'
+    LoggingProcessDebug:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'bin/console app:billing:run 11-2020 -vvv'
+            $workingDirectory: '%app.example_2%'
+            $command: 'bin/console app:billing:run 11-2020 -vvv --ansi'

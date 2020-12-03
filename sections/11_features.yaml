@@ -1,0 +1,101 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    FeaturesTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Features"
+    SymfonyStyleTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "SymfonyStyle"
+    SymfonyStyle:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "SymfonyStyle"
+            $subtitle: "Helper  Class  On  Top\nOf  Input  &  Output"
+    SymfonyStyleCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/symfony-style.php'
+            $offset: 6
+    SymfonyStyleOutput:
+        parent: 'TextSlide'
+        arguments:
+            $filePath: '%base_path%/text/symfony-style-output'
+
+    SectionsTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Sections"
+    SectionCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/section.php'
+            $minLineLength: 90
+    Slide\SectionSlide: ~
+    SectionProcess:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'bin/console app:billing:run 11-2020'
+            $workingDirectory: '%app.example_4%'
+            $command: 'bin/console app:billing:run 11-2020 --ansi'
+
+    CursorTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Cursor\nSince  v 5.1"
+    CursorCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/cursor.php'
+            $minLineLength: 90
+    Slides\SnakeSlide: ~
+
+    ColorTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Color\nSince  v 5.2"
+    ColorCode:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/color.php'
+            $minLineLength: 90
+    ColorImage:
+        parent: 'ImageSlide'
+        arguments:
+            $imagePath: '%base_path%/images/sympony.jpeg'
+    Slides\GradientSlide: ~
+
+    SignalsTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Signals\nSince  v 5.2"
+    SignalsCodeCommand:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/signal-cmd.php'
+            $minLineLength: 90
+    SignalEventsList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Console Events'
+            $bulletPoints:
+                - 'console . command'
+                - 'console . error'
+                - 'console . terminate'
+    SignalEventsList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Console Events'
+            $bulletPoints:
+                - 'console . command'
+                - 'console . error'
+                - 'console . terminate'
+                - 'console . signal'
+    SignalsCodeListener:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/signal-listener.php'
+            $minLineLength: 80

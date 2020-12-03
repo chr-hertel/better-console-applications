@@ -1,0 +1,15 @@
+imports:
+    - resource: sections/*.yaml
+
+parameters:
+    # application
+    app.flex: '/home/christopher/Talks/Better Console Applications/flex'
+    app.example: '/home/christopher/Talks/Better Console Applications/console-example'
+    app.example_2: '/home/christopher/Talks/Better Console Applications/console-example-2'
+    app.example_3: '/home/christopher/Talks/Better Console Applications/console-example-3'
+    app.example_4: '/home/christopher/Talks/Better Console Applications/console-example-4'
+    # cli note configuration
+    cli_note.list_slide.title_font: '%base_path%/fonts/Doom.flf'
+    cli_note.list_slide.bulletpoint_font: '%base_path%/fonts/Stick Letters.flf'
+    cli_note.title_slide.title_font: '%base_path%/fonts/Colossal.flf'
+    cli_note.title_slide.subtitle_font: '%base_path%/fonts/Stick Letters.flf'

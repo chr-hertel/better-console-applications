@@ -1,19 +1,24 @@
 {
     "name": "stoffel/better-console-applications-slidedeck",
     "description": "Slide deck to talk Better Console Applications by chr-hertel",
+    "authors": [
+        {
+            "name": "Christopher Hertel",
+            "email": "mail@christopher-hertel.de"
+        }
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.4",
         "jaem3l/cli-note": "@dev",
-        "symfony/finder": "^5.1"
+        "symfony/finder": "^5.2"
     },
     "autoload": {
         "psr-4": {
             "Slides\\": "slides/"
         },
         "classmap": [
-            "code/ExampleCommand.php",
-            "code/SymfonyStyleDemoCommand.php"
+            "code/ExampleCommand.php"
         ]
     },
     "minimum-stability": "dev",
@@ -22,26 +27,6 @@
         {
             "type": "path",
             "url": "~/Playground/Console/cli-note"
-        },
-        {
-            "type": "path",
-            "url": "~/Playground/Console/console-canvas"
-        },
-        {
-            "type": "path",
-            "url": "~/Playground/Console/console-gradient"
-        },
-        {
-            "type": "path",
-            "url": "~/Playground/Console/console-headline"
-        },
-        {
-            "type": "path",
-            "url": "~/Playground/Console/console-image"
-        },
-        {
-            "type": "path",
-            "url": "~/Playground/Console/console-sourcecode"
         }
     ]
 }

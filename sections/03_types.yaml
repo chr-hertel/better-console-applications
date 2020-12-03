@@ -1,0 +1,120 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    ApplicationTypesTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Application\nTypes"
+    BackgroundJobs:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Background\nJobs"
+    BackgroundJobsList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Background  Jobs'
+            $bulletPoints:
+                - 'Running  In  Background'
+    BackgroundJobsList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Background  Jobs'
+            $bulletPoints:
+                - 'Running  In  Background'
+                - 'No  Interaction'
+    BackgroundJobsList3:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Background  Jobs'
+            $bulletPoints:
+                - 'Running  In  Background'
+                - 'No  Interaction'
+                - 'Controlled  By  Server'
+    BackgroundJobsList4:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Background  Jobs'
+            $bulletPoints:
+                - 'Running  In  Background'
+                - 'No  Interaction'
+                - 'Controlled  By  Server'
+                - 'e.g.  Queue  Workers'
+    DevelopmentHelper:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Development\nHelper"
+    DevelopmentHelperList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Development  Helper'
+            $bulletPoints:
+                - 'Running  In  Foreground'
+    DevelopmentHelperList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Development  Helper'
+            $bulletPoints:
+                - 'Running  In  Foreground'
+                - 'Interaction  Possible'
+    DevelopmentHelperList3:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Development  Helper'
+            $bulletPoints:
+                - 'Running  In  Foreground'
+                - 'Interaction  Possible'
+                - 'Controller  By  User'
+    DevelopmentHelperList4:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Development  Helper'
+            $bulletPoints:
+                - 'Running  In  Foreground'
+                - 'Interaction  Possible'
+                - 'Controller  By  User'
+                - "e.g.  Code  Generator\n   or  Debugging  Commands"
+    HybridTools:
+        parent: 'TitleSlide'
+        arguments:
+            $title: "Hybrid\nTools"
+    HybridToolsList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Hybrid  Tools'
+            $bulletPoints:
+                - 'Combining  Both'
+    HybridToolsList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Hybrid  Tools'
+            $bulletPoints:
+                - 'Combining  Both'
+                - 'w/  Or  w/o  Interaction'
+    HybridToolsList3:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Hybrid  Tools'
+            $bulletPoints:
+                - 'Combining  Both'
+                - 'w/  Or  w/o  Interaction'
+                - 'Used  While  Development'
+    HybridToolsList4:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Hybrid  Tools'
+            $bulletPoints:
+                - 'Combining  Both'
+                - 'w/  Or  w/o  Interaction'
+                - 'Used  While  Development'
+                - 'e.g.  Composer  or  PHPUnit'
+    RarelyTools:
+        parent: 'TitleSlide'
+        arguments:
+            $title: 'But ...'
+            $subtitle: "We   rarely   build\nhybrid   tools"
+    FirstQuestion:
+        parent: 'TitleSlide'
+        arguments:
+            $title: 'First  Question'
+            $subtitle: 'Who  executes  this  command?'

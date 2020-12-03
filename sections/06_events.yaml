@@ -1,0 +1,70 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    EventsTitle:
+        class: 'Slides\SectionTitleSlide'
+        arguments:
+            $title: "Console\nEvents"
+    EventsList1:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Console Events'
+            $bulletPoints:
+                - 'console . command'
+    EventsList2:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Console Events'
+            $bulletPoints:
+                - 'console . command'
+                - 'console . error'
+    EventsList3:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Console Events'
+            $bulletPoints:
+                - 'console . command'
+                - 'console . error'
+                - 'console . terminate'
+    EventsList4:
+        parent: 'ListSlide'
+        arguments:
+            $headline: 'Console Events'
+            $bulletPoints:
+                - 'Console Command Event'
+                - 'Console Error Event'
+                - 'Console Terminate Event'
+    EventsImage1:
+        parent: 'ImageSlide'
+        arguments:
+            $imagePath: '%base_path%/images/events.png'
+    EventsImage2:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'Cheating ...'
+            $command: 'eog --fullscreen images/events.png'
+    EventsCode1:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/billing-run-input-2.php'
+            $offset: 65
+            $lines: 35
+    EventsCode2:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/StopwatchListener.php'
+            $offset: 10
+            $minLineLength: 90
+    EventsCode3:
+        parent: 'CodeSlide'
+        arguments:
+            $filePath: '%base_path%/code/billing-run-listener.php'
+            $offset: 65
+            $lines: 21
+    EventsBillingRun:
+        parent: 'ProcessSlide'
+        arguments:
+            $title: 'bin/console app:billing:run 11-2020'
+            $workingDirectory: '%app.example%'
+            $command: 'bin/console app:billing:run 11-2020 --ansi'

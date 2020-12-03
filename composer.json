@@ -10,7 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.4",
-        "jaem3l/cli-note": "@dev",
+        "jaem3l/cli-note": "^0.1",
         "symfony/finder": "^5.2"
     },
     "autoload": {
@@ -20,13 +20,5 @@
         "classmap": [
             "code/ExampleCommand.php"
         ]
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "path",
-            "url": "~/Playground/Console/cli-note"
-        }
-    ]
+    }
 }

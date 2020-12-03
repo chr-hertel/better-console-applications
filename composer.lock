@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7abc22ad10d4211f0db441beb121ab78",
+    "content-hash": "9afae39f545175df2c1d99bf85ef50ab",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -44,11 +44,17 @@
         },
         {
             "name": "jaem3l/cli-note",
-            "version": "dev-main",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jaem3l/cli-note.git",
+                "reference": "8a5715c5f48118cf771b01029fcc96c855d8c300"
+            },
             "dist": {
-                "type": "path",
-                "url": "/home/christopher/Playground/Console/cli-note",
-                "reference": "7956ed10bf84e465e5b897e924b1b0784d858dca"
+                "type": "zip",
+                "url": "https://api.github.com/repos/jaem3l/cli-note/zipball/8a5715c5f48118cf771b01029fcc96c855d8c300",
+                "reference": "8a5715c5f48118cf771b01029fcc96c855d8c300",
+                "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
@@ -73,6 +79,7 @@
                     "jæm3l\\CliNote\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -83,13 +90,15 @@
                 }
             ],
             "description": "Tool to build CLI based presentation slide decks",
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "issues": "https://github.com/jaem3l/cli-note/issues",
+                "source": "https://github.com/jaem3l/cli-note/tree/0.1"
+            },
+            "time": "2020-12-01T23:50:07+00:00"
         },
         {
             "name": "laminas/laminas-servicemanager",
-            "version": "3.4.1",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-servicemanager.git",
@@ -2527,11 +2536,9 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "jaem3l/cli-note": 20
-    },
-    "prefer-stable": true,
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.4"
